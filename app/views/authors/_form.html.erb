@@ -1,0 +1,40 @@
+<%= form_for @author do |f| %>
+ 
+  <% if @author.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@author.errors.count, "error") %> prohibited
+        this author from being saved:
+      </h2>
+      <ul>
+        <% @author.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<p>
+    <%= f.label :first_name, class:"form-label" %><br>
+    <%= f.text_field :first_name, class:"form-control" %>
+  </p>
+  <p>
+    <%= f.label :last_name, class:"form-label" %><br>
+    <%= f.text_field :last_name, class:"form-control" %>
+  </p>
+
+  <p>
+    <%= f.label :date_of_birth, class:"form-label" %><br>
+    <%= f.date_field :date_of_birth, class:"form-control" %>
+  </p>
+
+  <div class="row">
+        <div class="col-md-12">
+           <%= select_tag 'book_ids[]', options_for_select(books_list, @author.book_authors.pluck(:book_id)), multiple: true, size: 06,class:"form-control" %>
+        </div>
+      </div>
+
+  <p>
+    <%= f.submit class:"btn btn-secondary" %>
+  </p>
+ 
+<% end %>

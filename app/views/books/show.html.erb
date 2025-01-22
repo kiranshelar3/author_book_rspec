@@ -1,0 +1,21 @@
+<br/>
+
+<p>
+  <strong>Title:</strong>
+  <%= @book.title %>
+</p>
+<p>
+  <strong>Authors:</strong>
+
+  <% @authors.each do |author| %>
+  <h6>
+  <%= author.first_name + " "+author.last_name %></h6>
+  <% end %>
+</p>
+
+<br/>
+<%= link_to 'Back', books_path, class:"btn btn-secondary"%> |
+<%= link_to 'Edit', edit_book_path, class:"btn btn-secondary"%>
+<br/>
+<br/>
+<%= button_to "Delete", @book, method: :delete, data:{ confirm: 'Are you sure?' }, class:"btn btn-secondary" %>

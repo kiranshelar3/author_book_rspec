@@ -1,0 +1,34 @@
+
+<h3>Listing Authors</h3>
+ 
+<table class="table table-striped table-bordered table-hover">
+  
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>D.O.B.</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+ 
+  <% @authors.each do |author| %>
+    <tr>
+      <td><%= author.first_name %></td>
+      <td><%= author.last_name %></td>
+      <td><%= author.date_of_birth %></td>
+      <td><%= link_to 'Show', author_path(author), class:"btn btn-secondary" %></td>
+      <td><%= link_to 'Edit', edit_author_path(author), class:"btn btn-secondary" %></td>
+      <td><%= button_to 'Destroy', author_path(author),
+              method: :delete,
+              data: { confirm: 'Are you sure?' }, class:"btn btn-secondary" %></td>
+    </tr>
+
+  <% end %>
+</table>
+<br/>
+
+<%= link_to 'New author', new_author_path, class:"btn btn-secondary" %>
+
+
+

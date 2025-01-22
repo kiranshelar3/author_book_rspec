@@ -1,0 +1,16 @@
+<h1>Edit Book</h1>
+ 
+<%= form_for(@book) do |f| %>
+ 
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+ 
+  <p>
+    <%= f.submit class:"btn btn-secondary" %>
+  </p>
+ 
+<% end %>
+ 
+<%= link_to 'Back', books_path, class:"btn btn-secondary" %>

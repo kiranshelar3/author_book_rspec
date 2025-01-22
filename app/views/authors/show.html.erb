@@ -1,0 +1,31 @@
+
+<p>
+  <strong>First Name:</strong>
+  <%= @author.first_name %>
+</p>
+<p>
+  <strong>Last Name:</strong>
+  <%= @author.last_name %>
+</p>
+<p>
+  <strong>Date Of Birth:</strong>
+  <%= @author.date_of_birth %>
+</p>
+
+<strong>Books:</strong>
+  <% @books.each do |book|  %>
+  <h5>
+  <%= book.title %></h5>
+
+  <% end %>
+<p>
+  <!-- <strong>book_name:</strong> -->
+  <!-- < @author.title %> -->
+</p>
+
+<%= link_to 'Back', authors_path, class:"btn btn-secondary" %> |
+<%= link_to 'Edit', edit_author_path(@author), class:"btn btn-secondary"%>|
+<!-- < button_to "Destroy this friend", @friend, method: :delete, class:"btn btn-secondary" %> -->
+<br/>
+<br/>
+<%= button_to "Delete", @author, method: :delete, data:{ confirm: 'Are you sure?' }, class:"btn btn-secondary" %>
