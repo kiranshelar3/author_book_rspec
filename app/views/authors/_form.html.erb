@@ -27,14 +27,17 @@
     <%= f.date_field :date_of_birth, class:"form-control" %>
   </p>
 
-  <div class="row">
+    <div class="row">
         <div class="col-md-12">
+          <div class="form-label">
+          Select Book
+          </div>
            <%= select_tag 'book_ids[]', options_for_select(books_list, @author.book_authors.pluck(:book_id)), multiple: true, size: 06,class:"form-control" %>
         </div>
       </div>
 
   <p>
-    <%= f.submit class:"btn btn-secondary" %>
+    <%= f.submit class:"btn btn-secondary mt-4" %>
   </p>
  
 <% end %>

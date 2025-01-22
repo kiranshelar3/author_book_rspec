@@ -22,3 +22,10 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+steps
+
+bundle install
+rails db:create
+rails db:migrate
+rails db:seed (important)
